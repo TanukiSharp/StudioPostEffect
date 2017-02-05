@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<efxprj version="0.2">
+	<compositions>
+		<composition name="BandedSwirl">
+			<items>
+				<item id="0" pass="BandedSwirl.BandedSwirl" x="138" y="82">
+					<param name="Center" value="0.5;0.5" min="0;0" max="1;1" />
+					<param name="SpiralStrength" value="1.98" min="0" max="10" />
+					<param name="DistanceThreshold" value="0.527772" min="0" max="3.1415" />
+				</item>
+				<item id="1" primitive="result" x="274" y="113" />
+				<item id="2" primitive="scene" x="44" y="48" />
+			</items>
+			<links>
+				<link out="2" in="0" param="BandedSwirl.BandedSwirl.SourceTexture" />
+				<link out="0" in="1" />
+			</links>
+		</composition>
+		<composition name="Bloom">
+			<items>
+				<item id="0" pass="Bloom.Bloom" x="146" y="74">
+					<param name="BaseIntensity" value="1" min="0" max="1" />
+					<param name="BaseSaturation" value="1" min="0" max="1" />
+					<param name="BloomIntensity" value="1" min="0" max="1" />
+					<param name="BloomSaturation" value="1" min="0" max="1" />
+				</item>
+				<item id="1" primitive="result" x="295" y="150" />
+				<item id="2" primitive="scene" x="23" y="37" />
+			</items>
+			<links>
+				<link out="2" in="0" param="Bloom.Bloom.SourceTexture" />
+				<link out="0" in="1" />
+			</links>
+		</composition>
+		<composition name="BrightExtract">
+			<items>
+				<item id="0" pass="BrightExtract.BrightExtract" x="190" y="93">
+					<param name="Threshold" value="0.242" min="0" max="1" />
+				</item>
+				<item id="1" primitive="scene" x="67" y="37" />
+				<item id="2" primitive="result" x="352" y="166" />
+			</items>
+			<links>
+				<link out="1" in="0" param="BrightExtract.BrightExtract.SourceTexure" />
+				<link out="0" in="2" />
+			</links>
+		</composition>
+		<composition name="ColorTone">
+			<items>
+				<item id="0" pass="ColorTone.ColorTone" x="129" y="82">
+					<param name="Desaturation" value="1" min="0" max="1" />
+					<param name="Toned" value="1" min="0" max="1" />
+					<param name="LightColor" value="1; 0.292; 1; 0" min="" max="" />
+					<param name="DarkColor" value="0; 0; 0; 0" min="" max="" />
+				</item>
+				<item id="1" primitive="scene" x="32" y="26" />
+				<item id="2" primitive="result" x="250" y="150" />
+			</items>
+			<links>
+				<link out="1" in="0" param="ColorTone.ColorTone.SourceTexture" />
+				<link out="0" in="2" />
+			</links>
+		</composition>
+		<composition name="ContrastAdjust">
+			<items>
+				<item id="0" pass="ContrastAdjust.ContrastAdjust" x="119" y="87">
+					<param name="Brightness" value="0.265" min="0" max="1" />
+					<param name="Contrast" value="0.626" min="0" max="1" />
+				</item>
+				<item id="1" primitive="scene" x="37" y="31" />
+				<item id="2" primitive="result" x="250" y="150" />
+			</items>
+			<links>
+				<link out="1" in="0" param="ContrastAdjust.ContrastAdjust.SourceTexture" />
+				<link out="0" in="2" />
+			</links>
+		</composition>
+		<composition name="Directional Blur">
+			<items>
+				<item id="0" pass="DirectionalBlur.DirectionalBlur" x="140" y="68">
+					<param name="Angle" value="193.68" min="0" max="360" />
+					<param name="BlurAmount" value="0.00771" min="0" max="0.01" />
+				</item>
+				<item id="1" primitive="result" x="297" y="128" />
+				<item id="2" primitive="scene" x="42" y="56" />
+			</items>
+			<links>
+				<link out="2" in="0" param="DirectionalBlur.DirectionalBlur.SourceTexture" />
+				<link out="0" in="1" />
+			</links>
+		</composition>
+		<composition name="Embossed">
+			<items>
+				<item id="0" pass="Embossed.Embossed" x="127" y="89">
+					<param name="Amount" value="3" min="0" max="3" />
+					<param name="Width" value="0.00121" min="0" max="0.005" />
+				</item>
+				<item id="1" primitive="scene" x="43" y="42" />
+				<item id="2" primitive="result" x="250" y="150" />
+			</items>
+			<links>
+				<link out="1" in="0" param="Embossed.Embossed.SourceTexture" />
+				<link out="0" in="2" />
+			</links>
+		</composition>
+		<composition name="Gloom">
+			<items>
+				<item id="0" pass="Gloom.Gloom" x="129" y="71">
+					<param name="GloomIntensity" value="1" min="0" max="1" />
+					<param name="BaseIntensity" value="0" min="0" max="1" />
+					<param name="GloomSaturation" value="0.402" min="0" max="1" />
+					<param name="BaseSaturation" value="1" min="0" max="1" />
+				</item>
+				<item id="1" primitive="scene" x="35" y="28" />
+				<item id="2" primitive="result" x="250" y="150" />
+			</items>
+			<links>
+				<link out="1" in="0" param="Gloom.Gloom.SourceTexture" />
+				<link out="0" in="2" />
+			</links>
+		</composition>
+		<composition name="GrowablePoissonDisk">
+			<items>
+				<item id="0" pass="GrowablePoissonDisk.GrowablePoissonDisk" x="131" y="60">
+					<param name="DiscRadius" value="0.016" min="0" max="0.5" />
+					<param name="Width" value="0.58" min="0" max="1" />
+					<param name="Height" value="0.443" min="0" max="1" />
+				</item>
+				<item id="1" primitive="result" x="289" y="109" />
+				<item id="2" primitive="scene" x="31" y="37" />
+			</items>
+			<links>
+				<link out="2" in="0" param="GrowablePoissonDisk.GrowablePoissonDisk.SourceTexture" />
+				<link out="0" in="1" />
+			</links>
+		</composition>
+		<composition name="LightStreak">
+			<items>
+				<item id="0" pass="LightStreak.LightStreak" x="118" y="80">
+					<param name="BrightThreshold" value="0.479" min="0" max="1" />
+					<param name="Scale" value="0.429" min="0" max="1" />
+					<param name="Attenuation" value="0.676" min="0" max="1" />
+				</item>
+				<item id="1" primitive="result" x="250" y="150" />
+				<item id="2" primitive="scene" x="19" y="25" />
+			</items>
+			<links>
+				<link out="2" in="0" param="LightStreak.LightStreak.SourceTexture" />
+				<link out="0" in="1" />
+			</links>
+		</composition>
+		<composition name="Magnify">
+			<items>
+				<item id="0" pass="Magnify.Magnify" x="126" y="77">
+					<param name="Radius" value="0.219;0.219" min="0;0" max="1;1" />
+					<param name="Center" value="0.731;0.411" min="0;0" max="1;1" />
+					<param name="Amount" value="0.607" min="0" max="1" />
+				</item>
+				<item id="1" primitive="result" x="272" y="120" />
+				<item id="2" primitive="scene" x="25" y="29" />
+			</items>
+			<links>
+				<link out="2" in="0" param="Magnify.Magnify.SourceTexture" />
+				<link out="0" in="1" />
+			</links>
+		</composition>
+		<composition name="Pinch">
+			<items>
+				<item id="0" pass="Pinch.Pinch" x="161" y="59">
+					<param name="Center" value="0.5;0.5" min="0;0" max="1;1" />
+					<param name="Radius" value="0.74" min="0" max="1" />
+					<param name="Amount" value="0.973" min="0" max="1" />
+				</item>
+				<item id="1" primitive="result" x="313" y="93" />
+				<item id="2" primitive="scene" x="77" y="39" />
+			</items>
+			<links>
+				<link out="2" in="0" param="Pinch.Pinch.SourceTexture" />
+				<link out="0" in="1" />
+			</links>
+		</composition>
+		<composition name="Pixelate">
+			<items>
+				<item id="0" pass="Pixelate.Pixelate" x="179" y="84">
+					<param name="HorizontalPixelCounts" value="128" min="0" max="500" />
+					<param name="VerticalPixelCounts" value="101" min="0" max="500" />
+				</item>
+				<item id="1" primitive="result" x="300" y="120" />
+				<item id="2" primitive="scene" x="48" y="36" />
+			</items>
+			<links>
+				<link out="2" in="0" param="Pixelate.Pixelate.SourceTexture" />
+				<link out="0" in="1" />
+			</links>
+		</composition>
+		<composition name="Ripple">
+			<items>
+				<item id="0" pass="Ripple.Ripple" x="148" y="69">
+					<param name="Center" value="0.5;0.5" min="0;0" max="1;1" />
+					<param name="Amplitude" value="0.378" min="0" max="1" />
+					<param name="Frequency" value="-33.2" min="-50" max="50" />
+					<param name="Phase" value="0.137" min="0" max="1" />
+				</item>
+				<item id="1" primitive="result" x="274" y="102" />
+				<item id="2" primitive="scene" x="57" y="24" />
+			</items>
+			<links>
+				<link out="2" in="0" param="Ripple.Ripple.SourceTexture" />
+				<link out="0" in="1" />
+			</links>
+		</composition>
+		<composition name="Sharpen">
+			<items>
+				<item id="0" pass="Sharpen.Sharpen" x="160" y="86">
+					<param name="Amount" value="10" min="0" max="10" />
+					<param name="Width" value="0.000493" min="0" max="0.001" />
+				</item>
+				<item id="1" primitive="result" x="309" y="157" />
+				<item id="2" primitive="scene" x="45" y="28" />
+			</items>
+			<links>
+				<link out="2" in="0" param="Sharpen.Sharpen.SourceTexture" />
+				<link out="0" in="1" />
+			</links>
+		</composition>
+		<composition name="SmoothMagnify">
+			<items>
+				<item id="0" pass="SmoothMagnify.SmoothMagnify" x="122" y="62">
+					<param name="Center" value="0.5;0.5" min="0;0" max="1;1" />
+					<param name="InnerRadius" value="0.08" min="0" max="1" />
+					<param name="OuterRadius" value="0.252" min="0" max="1" />
+					<param name="Magnification" value="0.542" min="0" max="2" />
+				</item>
+				<item id="1" primitive="result" x="277" y="131" />
+				<item id="2" primitive="scene" x="15" y="28" />
+			</items>
+			<links>
+				<link out="2" in="0" param="SmoothMagnify.SmoothMagnify.SourceTexture" />
+				<link out="0" in="1" />
+			</links>
+		</composition>
+		<composition name="Swirl">
+			<items>
+				<item id="0" pass="Swirl.Swirl" x="148" y="60">
+					<param name="Center" value="0.5;0.5" min="0;0" max="1;1" />
+					<param name="SpiralStrength" value="0.267" min="0" max="1" />
+					<param name="AngleFrequency" value="4.92;4.815" min="0;0" max="15;15" />
+				</item>
+				<item id="1" primitive="result" x="291" y="115" />
+				<item id="2" primitive="scene" x="45" y="28" />
+			</items>
+			<links>
+				<link out="2" in="0" param="Swirl.Swirl.SourceTexture" />
+				<link out="0" in="1" />
+			</links>
+		</composition>
+		<composition name="ToneMapping">
+			<items>
+				<item id="0" pass="ToneMapping.ToneMapping" x="123" y="64">
+					<param name="Exposure" value="0.454" min="0" max="1" />
+					<param name="Defog" value="0" min="0" max="1" />
+					<param name="Gamma" value="1" min="0" max="1" />
+					<param name="FogColor" value="0; 1; 1; 0" min="" max="" />
+					<param name="VignetteRadius" value="0.699" min="0" max="1" />
+					<param name="VignetteCenter" value="0.5;0.5" min="0;0" max="1;1" />
+					<param name="BlueShift" value="0" min="0" max="1" />
+				</item>
+				<item id="1" primitive="result" x="292" y="149" />
+				<item id="2" primitive="scene" x="23" y="28" />
+			</items>
+			<links>
+				<link out="2" in="0" param="ToneMapping.ToneMapping.SourceTexture" />
+				<link out="0" in="1" />
+			</links>
+		</composition>
+		<composition name="ToonShading">
+			<items>
+				<item id="0" pass="ToonShading.ToonShading" x="191" y="86" />
+				<item id="1" primitive="scene" x="72" y="22" />
+				<item id="2" primitive="result" x="344" y="152" />
+			</items>
+			<links>
+				<link out="1" in="0" param="ToonShading.ToonShading.SourceTexture" />
+				<link out="0" in="2" />
+			</links>
+		</composition>
+		<composition name="ZoomBlur">
+			<items>
+				<item id="0" pass="ZoomBlur.ZoomBlur" x="145" y="78">
+					<param name="Center" value="0.5" min="0" max="1" />
+					<param name="BlurAmount" value="-0.37" min="-1" max="1" />
+				</item>
+				<item id="1" primitive="result" x="287" y="108" />
+				<item id="2" primitive="scene" x="44" y="29" />
+			</items>
+			<links>
+				<link out="2" in="0" param="ZoomBlur.ZoomBlur.SourceTexture" />
+				<link out="0" in="1" />
+			</links>
+		</composition>
+	</compositions>
+	<effects>
+		<effect file="shaders/effects/BandedSwirl.fx" />
+		<effect file="shaders/effects/Bloom.fx" />
+		<effect file="shaders/effects/BrightExtract.fx" />
+		<effect file="shaders/effects/ColorTone.fx" />
+		<effect file="shaders/effects/ContrastAdjust.fx" />
+		<effect file="shaders/effects/DirectionalBlur.fx" />
+		<effect file="shaders/effects/Embossed.fx" />
+		<effect file="shaders/effects/Gloom.fx" />
+		<effect file="shaders/effects/GrowablePoissonDisk.fx" />
+		<effect file="shaders/effects/LightStreak.fx" />
+		<effect file="shaders/effects/Magnify.fx" />
+		<effect file="shaders/effects/Pinch.fx" />
+		<effect file="shaders/effects/Pixelate.fx" />
+		<effect file="shaders/effects/Ripple.fx" />
+		<effect file="shaders/effects/Sharpen.fx" />
+		<effect file="shaders/effects/SmoothMagnify.fx" />
+		<effect file="shaders/effects/Swirl.fx" />
+		<effect file="shaders/effects/ToneMapping.fx" />
+		<effect file="shaders/effects/ToonShading.fx" />
+		<effect file="shaders/effects/ZoomBlur.fx" />
+	</effects>
+	<textures />
+</efxprj>

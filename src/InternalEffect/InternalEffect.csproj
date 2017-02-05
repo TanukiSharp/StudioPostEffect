@@ -1,0 +1,186 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F2646299-1308-48A5-9132-27256484DF80}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InternalEffect</RootNamespace>
+    <AssemblyName>InternalEffect</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HDRColorPicker, Version=1.0.3161.26285, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependences\HDRColorPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.TextEditor, Version=2.2.1.2648, Culture=neutral, PublicKeyToken=4d61825e8dd49f1a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependences\ICSharpCode.TextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.DirectX.Direct3D, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.DirectX.Direct3DX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ViewportDXControl, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\StudioPostEffect\Dependencies\ViewportDXControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCode.designer.cs">
+      <DependentUpon>frmCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInput.Designer.cs">
+      <DependentUpon>frmInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShowFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowFrame.Designer.cs">
+      <DependentUpon>frmShowFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalContainer.cs" />
+    <Compile Include="ControlNaming.cs" />
+    <Compile Include="CustomTreeNode\BaseTreeNode.cs" />
+    <Compile Include="CustomTreeNode\CompositionTreeNode.cs" />
+    <Compile Include="CustomTreeNode\CompositionsTreeNode.cs" />
+    <Compile Include="CustomTreeNode\EffectsTreeNode.cs" />
+    <Compile Include="CustomEffect\CustomBaseElement.cs" />
+    <Compile Include="CustomEffect\CustomParameter.cs" />
+    <Compile Include="CustomEffect\CustomPass.cs" />
+    <Compile Include="CustomEffect\CustomTechnique.cs" />
+    <Compile Include="CustomTreeNode\BaseElementTreeNode.cs" />
+    <Compile Include="CustomTreeNode\PassTreeNode.cs" />
+    <Compile Include="CustomTreeNode\Project.cs" />
+    <Compile Include="CustomTreeNode\TechniqueTreeNode.cs" />
+    <Compile Include="CustomEffect\CustomEffect.cs" />
+    <Compile Include="CustomTreeNode\TexturesTreeNode.cs" />
+    <Compile Include="CustomTreeNode\TextureTreeNode.cs" />
+    <Compile Include="Debug.cs" />
+    <Compile Include="Link\LinkBound.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Link\LinkManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCode.resx">
+      <DependentUpon>frmCode.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInput.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShowFrame.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmShowFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIParameters\MousePadControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MousePadControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIParameters\SliderControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SliderControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workflow\EffectWorkflowManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EffectWorkflowManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workflow\EffectWorkflowItem.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EffectWorkflowItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UIParameters\ColorPickerEditor.cs" />
+    <Compile Include="UIParameters\MousePadControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIParameters\MousePadControl.Designer.cs">
+      <DependentUpon>MousePadControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIParameters\MousePadEditor.cs" />
+    <Compile Include="UIParameters\PropertyGridTypes.cs" />
+    <Compile Include="UIParameters\SliderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIParameters\SliderControl.Designer.cs">
+      <DependentUpon>SliderControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIParameters\SliderEditor.cs" />
+    <Compile Include="UIParameters\SliderGridItems.cs" />
+    <Compile Include="UIParameters\UIParameter.cs" />
+    <Compile Include="Workflow\EffectWorkflowManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Workflow\EffectWorkflowManager.Designer.cs">
+      <DependentUpon>EffectWorkflowManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\EffectWorkflowItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Workflow\EffectWorkflowItem.Designer.cs">
+      <DependentUpon>EffectWorkflowItem.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PostEffectCore\PostEffectCore.csproj">
+      <Project>{C4AB98D6-579E-48DA-84A5-979A0CE78928}</Project>
+      <Name>PostEffectCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

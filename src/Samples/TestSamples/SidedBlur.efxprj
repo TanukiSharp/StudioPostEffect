@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<efxprj version="0.1">
+	<compositions>
+		<composition name="test">
+			<items>
+				<item id="0" pass="StrongBlurPattern.Horizontal" x="137" y="43">
+					<param name="X_FACTOR" value="1" min="0" max="1" />
+					<param name="Y_FACTOR" value="1" min="0" max="1" />
+				</item>
+				<item id="1" pass="StrongBlurPattern.Vertical" x="340" y="96">
+					<param name="X_FACTOR" value="1" min="0" max="1" />
+					<param name="Y_FACTOR" value="1" min="0" max="1" />
+				</item>
+				<item id="2" primitive="result" x="535" y="104" />
+				<item id="3" texture="textures/particle.png" x="31" y="109" />
+				<item id="4" primitive="scene" x="36" y="43" />
+			</items>
+			<links>
+				<link out="0" in="1" param="0" />
+				<link out="4" in="0" param="0" />
+				<link out="1" in="2" />
+				<link out="3" in="1" param="1" />
+				<link out="3" in="0" param="1" />
+			</links>
+		</composition>
+	</compositions>
+	<effects>
+		<effect file="shaders/black_white.fx" />
+		<effect file="shaders/bleach.fx" />
+		<effect file="shaders/blur.fx" />
+		<effect file="shaders/blur_pattern.fx" />
+		<effect file="shaders/color_convert.fx" />
+		<effect file="shaders/edge_detect.fx" />
+		<effect file="shaders/emboss.fx" />
+		<effect file="shaders/invert_color.fx" />
+		<effect file="shaders/light_sources.fx" />
+		<effect file="shaders/magnify.fx" />
+		<effect file="shaders/merge.fx" />
+		<effect file="shaders/ono_san_zoom.fx" />
+		<effect file="shaders/test.fx" />
+		<effect file="shaders/waving.fx" />
+	</effects>
+	<textures>
+		<texture file="textures/atsukan1_96x96.bmp" />
+		<texture file="textures/mr_burns2.jpg" />
+		<texture file="textures/particle.png" />
+	</textures>
+</efxprj>

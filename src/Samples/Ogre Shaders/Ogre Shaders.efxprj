@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<efxprj version="0.2">
+	<compositions>
+		<composition name="Gaussian Blur">
+			<items>
+				<item id="0" pass="OgreGaussianBlur.H" x="112" y="50">
+					<param name="Strength" value="0.005" min="0" max="0.005" />
+				</item>
+				<item id="1" pass="OgreGaussianBlur.V" x="146" y="61">
+					<param name="Strength" value="0.005" min="0" max="0.005" />
+				</item>
+				<item id="2" primitive="scene" x="27" y="50" />
+				<item id="3" primitive="result" x="277" y="74" />
+			</items>
+			<links>
+				<link out="0" in="1" param="OgreGaussianBlur.V.Input" />
+				<link out="2" in="0" param="OgreGaussianBlur.H.Input" />
+				<link out="1" in="3" />
+			</links>
+		</composition>
+		<composition name="Glass">
+			<items>
+				<item id="0" pass="BlackAndWhite.BlackAndWhite" x="104" y="100" />
+				<item id="1" pass="OgreGlass.OgreGlass" x="274" y="69" />
+				<item id="2" primitive="scene" x="75" y="39" />
+				<item id="3" primitive="result" x="441" y="74" />
+				<item id="4" texture="textures/burns.jpg" x="36" y="100" />
+			</items>
+			<links>
+				<link out="4" in="0" param="BlackAndWhite.BlackAndWhite.SourceTexture" />
+				<link out="1" in="3" />
+				<link out="0" in="1" param="OgreGlass.OgreGlass.NormalMap" />
+				<link out="2" in="1" param="OgreGlass.OgreGlass.Input" />
+			</links>
+		</composition>
+		<composition name="Others">
+			<items>
+				<item id="0" pass="OgreHDR.OgreHDR" x="156" y="123" />
+				<item id="1" pass="OgrePosterize.OgrePosterize" x="141" y="44" />
+				<item id="2" primitive="result" x="314" y="88" />
+				<item id="3" primitive="scene" x="26" y="84" />
+			</items>
+			<links>
+				<link out="3" in="1" param="OgrePosterize.OgrePosterize.Input" />
+				<link out="3" in="0" param="OgreHDR.OgreHDR.Input" />
+				<link out="0" in="2" />
+			</links>
+		</composition>
+		<composition name="Radial Blur">
+			<items>
+				<item id="0" pass="OgreRadialBlur.OgreRadialBlur" x="124" y="84">
+					<param name="Distortion" value="1" min="0" max="2" />
+					<param name="Strength" value="3" min="0" max="15" />
+				</item>
+				<item id="1" primitive="scene" x="30" y="27" />
+				<item id="2" primitive="result" x="250" y="150" />
+			</items>
+			<links>
+				<link out="1" in="0" param="OgreRadialBlur.OgreRadialBlur.Input" />
+				<link out="0" in="2" />
+			</links>
+		</composition>
+		<composition name="Simple Blur">
+			<items>
+				<item id="0" primitive="scene" x="41" y="50" />
+				<item id="1" pass="OgreSimpleBlur.H" x="125" y="50" />
+				<item id="2" pass="OgreSimpleBlur.V" x="154" y="58" />
+				<item id="3" primitive="result" x="283" y="71" />
+			</items>
+			<links>
+				<link out="1" in="2" param="OgreSimpleBlur.V.Input" />
+				<link out="0" in="1" param="OgreSimpleBlur.H.Input" />
+				<link out="2" in="3" />
+			</links>
+		</composition>
+	</compositions>
+	<effects>
+		<effect file="shaders/OgreGaussianBlur.fx" />
+		<effect file="shaders/OgreSimpleBlur.fx" />
+		<effect file="shaders/OgreGlass.fx" />
+		<effect file="shaders/OgreRadialBlur.fx" />
+		<effect file="shaders/OgrePosterize.fx" />
+		<effect file="shaders/OgreHDR.fx" />
+		<effect file="shaders/OgreDither.fx" />
+		<effect file="shaders/BlackWhite.fx" />
+	</effects>
+	<textures>
+		<texture file="textures/burns.jpg" />
+		<texture file="textures/particle.png" />
+	</textures>
+</efxprj>

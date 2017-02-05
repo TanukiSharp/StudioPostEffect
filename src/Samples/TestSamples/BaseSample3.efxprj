@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<efxprj version="0.1">
+	<compositions>
+		<composition name="test">
+			<items>
+				<item id="0" pass="BlackAndWhite.BlackAndWhite" x="153" y="27">
+					<param name="TestVariable" value="1;0.035" min="0;0" max="1;1" />
+				</item>
+				<item id="1" pass="EdgeDetect.EdgeDetect" x="164" y="84" />
+				<item id="2" pass="InvertColor.InvertColor" x="166" y="160" />
+				<item id="3" texture="textures/mr_burns2.jpg" x="42" y="137" />
+				<item id="4" primitive="scene" x="31" y="46" />
+				<item id="5" primitive="result" x="403" y="67" />
+			</items>
+			<links>
+				<link out="4" in="1" param="0" />
+				<link out="3" in="2" param="0" />
+				<link out="4" in="0" param="0" />
+				<link out="0" in="5" />
+			</links>
+		</composition>
+	</compositions>
+	<effects>
+		<effect file="shaders/edge_detect.fx" />
+		<effect file="shaders/black_white.fx" />
+		<effect file="shaders/invert_color.fx" />
+	</effects>
+	<textures>
+		<texture file="textures/atsukan1_96x96.bmp" />
+		<texture file="textures/mr_burns2.jpg" />
+	</textures>
+</efxprj>

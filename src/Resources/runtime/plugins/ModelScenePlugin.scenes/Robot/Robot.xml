@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModelScene>
+	<Node name="Robot">
+		<Node.Scale x="2.5" y="2.5" z="2.5" />
+		<Node.RotationY angle="0" />
+		<Node.Translation x="0" y="0" z="-2" />
+		<Model filename="Robot.x"/>
+	</Node>
+</ModelScene>

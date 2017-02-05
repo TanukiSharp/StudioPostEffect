@@ -1,0 +1,8 @@
+<skybox>
+	<front texture="front.jpg" />
+	<back texture="back.jpg" />
+	<top texture="top.jpg" rotation="2" />
+	<bottom texture="bottom.jpg" />
+	<right texture="right.jpg" />
+	<left texture="left.jpg" />
+</skybox>

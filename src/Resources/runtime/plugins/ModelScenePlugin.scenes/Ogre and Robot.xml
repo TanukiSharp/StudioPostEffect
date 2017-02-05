@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModelScene>
+	<Node name="Ogre">
+		<Node.Translation x="-18" y="18" z="0" />
+		<Node.Scale x="0.015" y="0.015" z="0.015" />
+		<Node.RotationY angle="180" />
+		<Model filename="Ogre\body.x"/>
+		<Node name="Equipments">
+			<Model filename="Ogre\shield.x" />
+			<Model filename="Ogre\armor.x" />
+		</Node>
+	</Node>
+	<Node name="Robot">
+		<Node.Scale x="2.5" y="2.5" z="2.5" />
+		<Node.Translation x="6" y="0" z="0" />
+		<Node.RotationY angle="0" />
+		<Node.Translation x="0" y="0" z="-2" />
+		<Model filename="Robot\Robot.x"/>
+	</Node>
+</ModelScene>

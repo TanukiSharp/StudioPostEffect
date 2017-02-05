@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<efxprj version="0.1">
+	<compositions>
+		<composition name="fading">
+			<items>
+				<item id="0" pass="LightSource.LightSource" x="177" y="162">
+					<param name="BRIGHTNESS_THRESHOLD" value="0.429" min="0" max="1" />
+				</item>
+				<item id="1" texture="textures/RuleL.png" x="84" y="172" />
+				<item id="2" texture="textures/RuleD.png" x="298" y="168" />
+				<item id="3" texture="textures/RuleK.png" x="85" y="109" />
+				<item id="4" pass="PassThrough.PassThrough" x="468" y="18" />
+				<item id="5" pass="ImageFading.ImageFading" x="374" y="72">
+					<param name="FaderCoef" value="-1" min="-1" max="1" />
+				</item>
+				<item id="6" pass="BlurZoom.BlurZoom" x="228" y="64">
+					<param name="ScaleFactor" value="0.5;0.5;-0.01;-0.01" min="0;0;-0.5;-0.5" max="1;1;1;1" />
+				</item>
+				<item id="7" texture="textures/final_fantasy_xii_wall_454.bmp" x="46" y="26" />
+				<item id="8" texture="textures/RuleB.png" x="155" y="118" />
+				<item id="9" texture="textures/RuleA.png" x="152" y="70" />
+				<item id="10" texture="textures/ME0001006677_2.jpg" x="138" y="-11" />
+				<item id="11" primitive="scene" x="290" y="29" />
+				<item id="12" primitive="result" x="493" y="162" />
+			</items>
+			<links>
+				<link out="11" in="5" param="1" />
+				<link out="2" in="5" param="2" />
+				<link out="7" in="6" param="0" />
+				<link out="6" in="5" param="0" />
+				<link out="11" in="4" param="0" />
+				<link out="4" in="12" />
+				<link out="1" in="0" param="0" />
+				<link out="0" in="4" param="1" />
+			</links>
+		</composition>
+	</compositions>
+	<effects>
+		<effect file="shaders/ImageFading.fx" />
+		<effect file="shaders/light_sources.fx" />
+		<effect file="shaders/zoom.fx" />
+		<effect file="shaders/dfdf.fx" />
+	</effects>
+	<textures>
+		<texture file="textures/RuleA.png" />
+		<texture file="textures/RuleB.png" />
+		<texture file="textures/RuleC.png" />
+		<texture file="textures/RuleD.png" />
+		<texture file="textures/RuleE.png" />
+		<texture file="textures/RuleF.png" />
+		<texture file="textures/RuleG.png" />
+		<texture file="textures/RuleH.png" />
+		<texture file="textures/RuleI.png" />
+		<texture file="textures/RuleJ.png" />
+		<texture file="textures/RuleK.png" />
+		<texture file="textures/RuleL.png" />
+		<texture file="textures/RuleM.png" />
+		<texture file="textures/ME0001006677_2.jpg" />
+		<texture file="textures/final_fantasy_xii_wall_454.bmp" />
+	</textures>
+</efxprj>

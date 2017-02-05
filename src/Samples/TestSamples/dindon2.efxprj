@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<efxprj version="0.1">
+	<compositions>
+		<composition name="inverted zoomed blur">
+			<workflow>
+				<items>
+					<item id="0" primitive="result" x="451" y="82" />
+					<item id="1" pass="BlurZoom.BlurZoom" x="304" y="79">
+						<param name="ScaleFactor" value="0,5;0,5;-0,00999999;-0,00999999" />
+					</item>
+					<item id="2" pass="InvertColor.InvertColor" x="142" y="83" />
+					<item id="3" primitive="scene" x="29" y="52" />
+				</items>
+				<links>
+					<link out="3" in="2" param="0" />
+					<link out="2" in="1" param="0" />
+					<link out="1" in="0" />
+				</links>
+			</workflow>
+		</composition>
+		<composition name="zoomed blur">
+			<workflow>
+				<items>
+					<item id="0" pass="BlurZoom.BlurZoom" x="159" y="61">
+						<param name="ScaleFactor" value="0,5;0,5;-0,00999999;-0,00999999" />
+					</item>
+					<item id="1" primitive="result" x="349" y="96" />
+					<item id="2" primitive="scene" x="35" y="43" />
+				</items>
+				<links>
+					<link out="2" in="0" param="0" />
+					<link out="0" in="1" />
+				</links>
+			</workflow>
+		</composition>
+	</compositions>
+	<effects>
+		<effect file="shaders/invert_color.fx" />
+		<effect file="shaders/ono_san_zoom.fx" />
+	</effects>
+	<textures>
+		<texture file="textures/particle.png" />
+	</textures>
+</efxprj>

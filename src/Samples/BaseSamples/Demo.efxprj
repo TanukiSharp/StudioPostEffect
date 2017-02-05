@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<efxprj version="0.2">
+	<compositions>
+		<composition name="Blur Rotate">
+			<items>
+				<item id="0" pass="Merge.CoefMerge" x="251" y="41">
+					<param name="MergeCoef" value="0.895" min="0" max="1" />
+				</item>
+				<item id="1" pass="BlurRotate.BlurRotate" x="145" y="101">
+					<param name="Center" value="0.5;0.5" min="0;0" max="1;1" />
+					<param name="Offset" value="-0.0148;-0.0244" min="-0.05;-0.05" max="0.05;0.05" />
+				</item>
+				<item id="2" primitive="result" x="392" y="114" />
+				<item id="3" primitive="scene" x="28" y="34" />
+				<item id="4" primitive="prevframe" x="13" y="143" />
+			</items>
+			<links>
+				<link out="4" in="1" param="BlurRotate.BlurRotate.Input" />
+				<link out="1" in="0" param="Merge.CoefMerge.SecondTexture" />
+				<link out="3" in="0" param="Merge.CoefMerge.FirstTexture" />
+				<link out="0" in="2" />
+			</links>
+		</composition>
+		<composition name="Comparer">
+			<items>
+				<item id="0" pass="Comparer.Comparer" x="306" y="137">
+					<param name="Mode" value="0" min="0" max="7" />
+					<param name="ZoneSize" value="0.02" min="0" max="1" />
+				</item>
+				<item id="1" pass="EdgeDetect.EdgeDetect" x="127" y="19">
+					<param name="BorderLineColor" value="0; 0; 0; 0" min="" max="" />
+				</item>
+				<item id="2" primitive="scene" x="24" y="150" />
+				<item id="3" primitive="result" x="414" y="163" />
+				<item id="4" pass="BleachBypass.BleachBypass" x="127" y="113">
+					<param name="OVERLAY_ADJUSTMENT" value="0.5" min="0" max="1" />
+					<param name="DARK_ADJUSTMENT" value="0" min="0" max="1" />
+					<param name="BRIGHT_ADJUSTMENT" value="1" min="0" max="1" />
+				</item>
+				<item id="5" pass="BlackAndWhite.BlackAndWhite" x="127" y="66" />
+			</items>
+			<links>
+				<link out="2" in="4" param="BleachBypass.BleachBypass.SourceTexture" />
+				<link out="2" in="5" param="BlackAndWhite.BlackAndWhite.SourceTexture" />
+				<link out="2" in="1" param="EdgeDetect.EdgeDetect.SourceTexture" />
+				<link out="1" in="0" param="Comparer.Comparer.Effect" />
+				<link out="0" in="3" />
+				<link out="2" in="0" param="Comparer.Comparer.NormalRender" />
+			</links>
+		</composition>
+		<composition name="Demo">
+			<items>
+				<item id="0" primitive="result" x="588" y="148" />
+				<item id="1" pass="BlackFilter.BlackFilter" x="232" y="55">
+					<param name="Threshold" value="0.63" min="0" max="1" />
+				</item>
+				<item id="2" pass="Merge.SubstractMerge" x="429" y="95">
+					<param name="MergeCoef" value="0.406" min="0" max="1" />
+				</item>
+				<item id="3" pass="InvertColor.InvertColor" x="321" y="39" />
+				<item id="4" primitive="scene" x="11" y="140" />
+				<item id="5" pass="EdgeDetect.EdgeDetect" x="113" y="42">
+					<param name="BorderLineColor" value="0; 0; 0; 0" min="" max="" />
+				</item>
+			</items>
+			<links>
+				<link out="4" in="5" param="EdgeDetect.EdgeDetect.SourceTexture" />
+				<link out="4" in="2" param="Merge.SubstractMerge.FirstTexture" />
+				<link out="1" in="3" param="InvertColor.InvertColor.SourceTexture" />
+				<link out="3" in="2" param="Merge.SubstractMerge.SecondTexture" />
+				<link out="2" in="0" />
+				<link out="4" in="1" param="BlackFilter.BlackFilter.Input" />
+			</links>
+		</composition>
+		<composition name="Glow">
+			<items>
+				<item id="0" pass="Merge.AddMerge" x="428" y="122">
+					<param name="MergeCoef" value="0.1" min="0" max="1" />
+				</item>
+				<item id="1" pass="BrightExtract.BrightExtract" x="102" y="54">
+					<param name="Threshold" value="0.726" min="0" max="1" />
+				</item>
+				<item id="2" pass="Blur.Vertical" x="201" y="76">
+					<param name="Factor" value="1;1.5" min="0;0" max="1;2" />
+				</item>
+				<item id="3" pass="Blur.Horizontal" x="189" y="67">
+					<param name="Factor" value="1.5;1" min="0;0" max="2;1" />
+				</item>
+				<item id="4" pass="Blur.Vertical" x="304" y="98">
+					<param name="Factor" value="1;1.5" min="0;0" max="1;2" />
+				</item>
+				<item id="5" pass="Blur.Horizontal" x="292" y="89">
+					<param name="Factor" value="1.5;1" min="0;0" max="2;1" />
+				</item>
+				<item id="6" primitive="scene" x="46" y="135" />
+				<item id="7" primitive="result" x="531" y="148" />
+			</items>
+			<links>
+				<link out="6" in="1" param="BrightExtract.BrightExtract.SourceTexure" />
+				<link out="3" in="2" param="Blur.Vertical.SourceTexture" />
+				<link out="5" in="4" param="Blur.Vertical.SourceTexture" />
+				<link out="2" in="5" param="Blur.Horizontal.SourceTexture" />
+				<link out="6" in="0" param="Merge.AddMerge.SecondTexture" />
+				<link out="0" in="7" />
+				<link out="4" in="0" param="Merge.AddMerge.FirstTexture" />
+				<link out="1" in="3" param="Blur.Horizontal.SourceTexture" />
+			</links>
+		</composition>
+		<composition name="No Effect">
+			<items>
+				<item id="0" pass="Illustration.Illustration" x="182" y="62">
+					<param name="ConstColor" value="0.5;0.5;0.5" min="0;0;0" max="1;1;1" />
+					<param name="Scale" value="0.652" min="0" max="1" />
+					<param name="Interpolater0" value="0" min="0" max="10" />
+					<param name="Interpolater1" value="10" min="-10" max="10" />
+				</item>
+				<item id="1" primitive="scene" x="85" y="154" />
+				<item id="2" primitive="result" x="349" y="168" />
+			</items>
+			<links>
+				<link out="1" in="0" param="Illustration.Illustration.Input" />
+				<link out="0" in="2" />
+			</links>
+		</composition>
+		<composition name="Wave">
+			<items>
+				<item id="0" pass="Yopparai.Yopparai4" x="122" y="67">
+					<param name="STRENGTH" value="41.36" min="10" max="255" />
+					<param name="FREQUENCY" value="54.825" min="0" max="255" />
+					<param name="SPEED" value="0.05" min="0" max="1" />
+					<param name="CURRENT_TIME" value="0" min="0" max="300" />
+				</item>
+				<item id="1" primitive="result" x="276" y="136" />
+				<item id="2" primitive="scene" x="19" y="26" />
+			</items>
+			<links>
+				<link out="2" in="0" param="Yopparai.Yopparai4.SrcMap" />
+				<link out="0" in="1" />
+			</links>
+		</composition>
+	</compositions>
+	<effects>
+		<effect file="shaders/BlackWhite.fx" />
+		<effect file="shaders/Bleach.fx" />
+		<effect file="shaders/Blur.fx" />
+		<effect file="shaders/BlurPattern.fx" />
+		<effect file="shaders/BlurRotate.fx" />
+		<effect file="shaders/BlurZoom.fx" />
+		<effect file="shaders/BrightExtract.fx" />
+		<effect file="shaders/ColorConvert.fx" />
+		<effect file="shaders/Comparer.fx" />
+		<effect file="shaders/EdgeDetect.fx" />
+		<effect file="shaders/Emboss.fx" />
+		<effect file="shaders/InvertColor.fx" />
+		<effect file="shaders/LightSources.fx" />
+		<effect file="shaders/Magnify.fx" />
+		<effect file="shaders/Merge.fx" />
+		<effect file="shaders/Switch.fx" />
+		<effect file="shaders/Yopparai.fx" />
+		<effect file="shaders/GaussianBlur.fx" />
+		<effect file="shaders/Black Filter.fx" />
+		<effect file="shaders/Illustration.fx" />
+	</effects>
+	<textures>
+		<texture file="textures/particle.png" />
+	</textures>
+</efxprj>

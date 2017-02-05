@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<efxprj version="0.1">
+	<compositions>
+		<composition name="test">
+			<items>
+				<item id="0" pass="InvertColor.InvertColor" x="175" y="99" />
+				<item id="1" pass="InvertColor.InvertColor" x="156" y="88" />
+				<item id="2" pass="EdgeDetect.EdgeDetect" x="315" y="98" />
+				<item id="3" primitive="result" x="468" y="103" />
+				<item id="4" primitive="scene" x="44" y="68" />
+			</items>
+			<links>
+				<link out="4" in="1" param="0" />
+				<link out="1" in="0" param="0" />
+				<link out="2" in="3" />
+				<link out="0" in="2" param="0" />
+			</links>
+		</composition>
+	</compositions>
+	<effects>
+		<effect file="shaders/black_white.fx" />
+		<effect file="shaders/bleach.fx" />
+		<effect file="shaders/blur.fx" />
+		<effect file="shaders/blur_pattern.fx" />
+		<effect file="shaders/color_convert.fx" />
+		<effect file="shaders/edge_detect.fx" />
+		<effect file="shaders/emboss.fx" />
+		<effect file="shaders/invert_color.fx" />
+		<effect file="shaders/light_sources.fx" />
+		<effect file="shaders/magnify.fx" />
+		<effect file="shaders/merge.fx" />
+		<effect file="shaders/ono_san_zoom.fx" />
+		<effect file="shaders/test.fx" />
+		<effect file="shaders/waving.fx" />
+	</effects>
+	<textures>
+		<texture file="textures/atsukan1_96x96.bmp" />
+		<texture file="textures/mr_burns2.jpg" />
+		<texture file="textures/particle.png" />
+	</textures>
+</efxprj>

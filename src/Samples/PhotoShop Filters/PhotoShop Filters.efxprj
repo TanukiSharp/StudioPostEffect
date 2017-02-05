@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<efxprj version="0.2">
+	<compositions>
+		<composition name="Add">
+			<items>
+				<item id="0" primitive="result" x="373" y="40" />
+				<item id="1" pass="PhotoShopFilters.Add" x="230" y="32" />
+				<item id="2" texture="textures/gradiant_left_black_right_white.png" x="11" y="71" />
+				<item id="3" texture="textures/gradiant_top_white_down_black.png" x="12" y="21" />
+			</items>
+			<links>
+				<link out="3" in="1" param="PhotoShopFilters.Add.UpperLayer" />
+				<link out="2" in="1" param="PhotoShopFilters.Add.LowerLayer" />
+				<link out="1" in="0" />
+			</links>
+		</composition>
+		<composition name="Color Burn">
+			<items>
+				<item id="0" primitive="result" x="389" y="44" />
+				<item id="1" pass="PhotoShopFilters.ColorBurn" x="216" y="32" />
+				<item id="2" texture="textures/gradiant_left_black_right_white.png" x="13" y="71" />
+				<item id="3" texture="textures/gradiant_top_white_down_black.png" x="10" y="19" />
+			</items>
+			<links>
+				<link out="3" in="1" param="PhotoShopFilters.ColorBurn.UpperLayer" />
+				<link out="2" in="1" param="PhotoShopFilters.ColorBurn.LowerLayer" />
+				<link out="1" in="0" />
+			</links>
+		</composition>
+		<composition name="Color Dodge">
+			<items>
+				<item id="0" primitive="result" x="408" y="40" />
+				<item id="1" pass="PhotoShopFilters.ColorDodge" x="224" y="33" />
+				<item id="2" texture="textures/gradiant_left_black_right_white.png" x="12" y="69" />
+				<item id="3" texture="textures/gradiant_top_white_down_black.png" x="12" y="17" />
+			</items>
+			<links>
+				<link out="3" in="1" param="PhotoShopFilters.ColorDodge.UpperLayer" />
+				<link out="2" in="1" param="PhotoShopFilters.ColorDodge.LowerLayer" />
+				<link out="1" in="0" />
+			</links>
+		</composition>
+		<composition name="Darken">
+			<items>
+				<item id="0" primitive="result" x="390" y="42" />
+				<item id="1" pass="PhotoShopFilters.Darken" x="225" y="31" />
+				<item id="2" texture="textures/gradiant_left_black_right_white.png" x="15" y="72" />
+				<item id="3" texture="textures/gradiant_top_white_down_black.png" x="13" y="20" />
+			</items>
+			<links>
+				<link out="3" in="1" param="PhotoShopFilters.Darken.UpperLayer" />
+				<link out="2" in="1" param="PhotoShopFilters.Darken.LowerLayer" />
+				<link out="1" in="0" />
+			</links>
+		</composition>
+		<composition name="Difference">
+			<items>
+				<item id="0" primitive="result" x="395" y="40" />
+				<item id="1" pass="PhotoShopFilters.Difference" x="217" y="29" />
+				<item id="2" texture="textures/gradiant_left_black_right_white.png" x="10" y="64" />
+				<item id="3" texture="textures/gradiant_top_white_down_black.png" x="10" y="13" />
+			</items>
+			<links>
+				<link out="3" in="1" param="PhotoShopFilters.Difference.UpperLayer" />
+				<link out="2" in="1" param="PhotoShopFilters.Difference.LowerLayer" />
+				<link out="1" in="0" />
+			</links>
+		</composition>
+		<composition name="Exclusion">
+			<items>
+				<item id="0" primitive="result" x="383" y="40" />
+				<item id="1" pass="PhotoShopFilters.Exclusion" x="211" y="28" />
+				<item id="2" texture="textures/gradiant_left_black_right_white.png" x="13" y="61" />
+				<item id="3" texture="textures/gradiant_top_white_down_black.png" x="10" y="15" />
+			</items>
+			<links>
+				<link out="3" in="1" param="PhotoShopFilters.Exclusion.UpperLayer" />
+				<link out="2" in="1" param="PhotoShopFilters.Exclusion.LowerLayer" />
+				<link out="1" in="0" />
+			</links>
+		</composition>
+		<composition name="Hard Light">
+			<items>
+				<item id="0" primitive="result" x="390" y="45" />
+				<item id="1" pass="PhotoShopFilters.HardLight" x="225" y="34" />
+				<item id="2" texture="textures/gradiant_left_black_right_white.png" x="18" y="71" />
+				<item id="3" texture="textures/gradiant_top_white_down_black.png" x="17" y="19" />
+			</items>
+			<links>
+				<link out="3" in="1" param="PhotoShopFilters.HardLight.UpperLayer" />
+				<link out="2" in="1" param="PhotoShopFilters.HardLight.LowerLayer" />
+				<link out="1" in="0" />
+			</links>
+		</composition>
+		<composition name="Lighten">
+			<items>
+				<item id="0" primitive="result" x="373" y="39" />
+				<item id="1" pass="PhotoShopFilters.Lighten" x="217" y="24" />
+				<item id="2" texture="textures/gradiant_left_black_right_white.png" x="15" y="68" />
+				<item id="3" texture="textures/gradiant_top_white_down_black.png" x="10" y="16" />
+			</items>
+			<links>
+				<link out="3" in="1" param="PhotoShopFilters.Lighten.UpperLayer" />
+				<link out="1" in="0" />
+				<link out="2" in="1" param="PhotoShopFilters.Lighten.LowerLayer" />
+			</links>
+		</composition>
+		<composition name="Linear Burn">
+			<items>
+				<item id="0" primitive="result" x="376" y="41" />
+				<item id="1" pass="PhotoShopFilters.LinearBurn" x="214" y="31" />
+				<item id="2" texture="textures/gradiant_left_black_right_white.png" x="17" y="71" />
+				<item id="3" texture="textures/gradiant_top_white_down_black.png" x="12" y="16" />
+			</items>
+			<links>
+				<link out="3" in="1" param="PhotoShopFilters.LinearBurn.UpperLayer" />
+				<link out="2" in="1" param="PhotoShopFilters.LinearBurn.LowerLayer" />
+				<link out="1" in="0" />
+			</links>
+		</composition>
+		<composition name="Linear Dodge">
+			<items>
+				<item id="0" primitive="result" x="401" y="41" />
+				<item id="1" pass="PhotoShopFilters.LinearDodge" x="220" y="38" />
+				<item id="2" texture="textures/gradiant_left_black_right_white.png" x="16" y="75" />
+				<item id="3" texture="textures/gradiant_top_white_down_black.png" x="14" y="24" />
+			</items>
+			<links>
+				<link out="3" in="1" param="PhotoShopFilters.LinearDodge.UpperLayer" />
+				<link out="2" in="1" param="PhotoShopFilters.LinearDodge.LowerLayer" />
+				<link out="1" in="0" />
+			</links>
+		</composition>
+		<composition name="Linear Light">
+			<items>
+				<item id="0" primitive="result" x="398" y="38" />
+				<item id="1" pass="PhotoShopFilters.LinearLight" x="218" y="31" />
+				<item id="2" texture="textures/gradiant_left_black_right_white.png" x="14" y="69" />
+				<item id="3" texture="textures/gradiant_top_white_down_black.png" x="9" y="18" />
+			</items>
+			<links>
+				<link out="3" in="1" param="PhotoShopFilters.LinearLight.UpperLayer" />
+				<link out="2" in="1" param="PhotoShopFilters.LinearLight.LowerLayer" />
+				<link out="1" in="0" />
+			</links>
+		</composition>
+		<composition name="Multiply">
+			<items>
+				<item id="0" primitive="result" x="404" y="43" />
+				<item id="1" pass="PhotoShopFilters.Multiply" x="234" y="36" />
+				<item id="2" texture="textures/gradiant_left_black_right_white.png" x="16" y="73" />
+				<item id="3" texture="textures/gradiant_top_white_down_black.png" x="13" y="18" />
+			</items>
+			<links>
+				<link out="3" in="1" param="PhotoShopFilters.Multiply.UpperLayer" />
+				<link out="2" in="1" param="PhotoShopFilters.Multiply.LowerLayer" />
+				<link out="1" in="0" />
+			</links>
+		</composition>
+		<composition name="Overlay">
+			<items>
+				<item id="0" pass="PhotoShopFilters.Overlay" x="227" y="28" />
+				<item id="1" primitive="result" x="395" y="42" />
+				<item id="2" texture="textures/gradiant_left_black_right_white.png" x="17" y="65" />
+				<item id="3" texture="textures/gradiant_top_white_down_black.png" x="12" y="16" />
+			</items>
+			<links>
+				<link out="3" in="0" param="PhotoShopFilters.Overlay.UpperLayer" />
+				<link out="2" in="0" param="PhotoShopFilters.Overlay.LowerLayer" />
+				<link out="0" in="1" />
+			</links>
+		</composition>
+		<composition name="Pin Light">
+			<items>
+				<item id="0" primitive="result" x="381" y="34" />
+				<item id="1" pass="PhotoShopFilters.PinLight" x="224" y="26" />
+				<item id="2" texture="textures/gradiant_left_black_right_white.png" x="14" y="68" />
+				<item id="3" texture="textures/gradiant_top_white_down_black.png" x="12" y="17" />
+			</items>
+			<links>
+				<link out="3" in="1" param="PhotoShopFilters.PinLight.UpperLayer" />
+				<link out="2" in="1" param="PhotoShopFilters.PinLight.LowerLayer" />
+				<link out="1" in="0" />
+			</links>
+		</composition>
+		<composition name="Screen">
+			<items>
+				<item id="0" pass="PhotoShopFilters.Screen" x="229" y="24" />
+				<item id="1" primitive="result" x="388" y="38" />
+				<item id="2" texture="textures/gradiant_left_black_right_white.png" x="14" y="63" />
+				<item id="3" texture="textures/gradiant_top_white_down_black.png" x="11" y="14" />
+			</items>
+			<links>
+				<link out="0" in="1" />
+				<link out="3" in="0" param="PhotoShopFilters.Screen.LowerLayer" />
+				<link out="2" in="0" param="PhotoShopFilters.Screen.UpperLayer" />
+			</links>
+		</composition>
+		<composition name="Soft Light">
+			<items>
+				<item id="0" primitive="result" x="387" y="33" />
+				<item id="1" pass="PhotoShopFilters.SoftLight" x="218" y="24" />
+				<item id="2" texture="textures/gradiant_left_black_right_white.png" x="8" y="60" />
+				<item id="3" texture="textures/gradiant_top_white_down_black.png" x="8" y="14" />
+			</items>
+			<links>
+				<link out="3" in="1" param="PhotoShopFilters.SoftLight.UpperLayer" />
+				<link out="2" in="1" param="PhotoShopFilters.SoftLight.LowerLayer" />
+				<link out="1" in="0" />
+			</links>
+		</composition>
+		<composition name="Substract">
+			<items>
+				<item id="0" primitive="result" x="379" y="32" />
+				<item id="1" pass="PhotoShopFilters.Subtract" x="221" y="24" />
+				<item id="2" texture="textures/gradiant_left_black_right_white.png" x="14" y="64" />
+				<item id="3" texture="textures/gradiant_top_white_down_black.png" x="10" y="13" />
+			</items>
+			<links>
+				<link out="3" in="1" param="PhotoShopFilters.Subtract.UpperLayer" />
+				<link out="2" in="1" param="PhotoShopFilters.Subtract.LowerLayer" />
+				<link out="1" in="0" />
+			</links>
+		</composition>
+		<composition name="Vivid Light">
+			<items>
+				<item id="0" primitive="result" x="399" y="28" />
+				<item id="1" pass="PhotoShopFilters.VividLight" x="224" y="19" />
+				<item id="2" texture="textures/gradiant_left_black_right_white.png" x="14" y="56" />
+				<item id="3" texture="textures/gradiant_top_white_down_black.png" x="11" y="13" />
+			</items>
+			<links>
+				<link out="3" in="1" param="PhotoShopFilters.VividLight.UpperLayer" />
+				<link out="2" in="1" param="PhotoShopFilters.VividLight.LowerLayer" />
+				<link out="1" in="0" />
+			</links>
+		</composition>
+	</compositions>
+	<effects>
+		<effect file="shaders/PhotoShopFilters.fx" />
+	</effects>
+	<textures>
+		<texture file="textures/gradiant_left_black_right_white.png" />
+		<texture file="textures/gradiant_top_white_down_black.png" />
+	</textures>
+</efxprj>

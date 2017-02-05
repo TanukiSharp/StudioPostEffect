@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<efxprj version="0.2">
+	<compositions>
+		<composition name="test">
+			<items>
+				<item id="0" primitive="result" x="495" y="104" />
+				<item id="1" texture="textures/particle.png" x="34" y="136" />
+				<item id="2" pass="BlurPattern.Vertical" x="316" y="92">
+					<param name="Factor" value="1;2" min="0;0" max="1;3" />
+				</item>
+				<item id="3" pass="BlurPattern.Horizontal" x="169" y="43">
+					<param name="Factor" value="2;1" min="0;0" max="3;1" />
+				</item>
+				<item id="4" primitive="scene" x="36" y="43" />
+			</items>
+			<links>
+				<link out="4" in="3" param="BlurPattern.Horizontal.SourceTexture" />
+				<link out="3" in="2" param="BlurPattern.Vertical.SourceTexture" />
+				<link out="2" in="0" />
+				<link out="1" in="3" param="BlurPattern.Horizontal.PatternTexture" />
+				<link out="1" in="2" param="BlurPattern.Vertical.PatternTexture" />
+			</links>
+		</composition>
+	</compositions>
+	<effects>
+		<effect file="shaders/BlurPattern.fx" />
+	</effects>
+	<textures>
+		<texture file="textures/particle.png" />
+	</textures>
+</efxprj>

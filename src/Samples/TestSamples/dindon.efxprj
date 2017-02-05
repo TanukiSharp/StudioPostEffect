@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<efxprj version="0.1">
+	<compositions>
+		<composition name="test">
+			<items>
+				<item id="0" pass="Switching.Switching" x="472" y="112">
+					<param name="Switch" value="true" min="" max="" />
+				</item>
+				<item id="1" pass="Merge.CoefMerge" x="340" y="86">
+					<param name="MergeCoef" value="0.26" min="0" max="1" />
+				</item>
+				<item id="2" pass="Merge.CoefMerge" x="231" y="60">
+					<param name="MergeCoef" value="0.3" min="0" max="1" />
+				</item>
+				<item id="3" pass="BlurZoom.BlurZoom" x="184" y="134">
+					<param name="ScaleFactor" value="0.5;0.5;-0.01;-0.01" min="0;0;-0.5;-0.5" max="1;1;0.5;0.5" />
+				</item>
+				<item id="4" pass="EdgeDetect.EdgeDetect" x="102" y="31" />
+				<item id="5" primitive="result" x="573" y="105" />
+				<item id="6" primitive="scene" x="365" y="155" />
+				<item id="7" primitive="prevframe" x="55" y="134" />
+				<item id="8" primitive="scene" x="16" y="73" />
+			</items>
+			<links>
+				<link out="8" in="4" param="0" />
+				<link out="4" in="2" param="0" />
+				<link out="8" in="2" param="1" />
+				<link out="2" in="1" param="0" />
+				<link out="7" in="3" param="0" />
+				<link out="3" in="1" param="1" />
+				<link out="1" in="0" param="0" />
+				<link out="6" in="0" param="1" />
+				<link out="0" in="5" />
+			</links>
+		</composition>
+	</compositions>
+	<effects>
+		<effect file="shaders/black_white.fx" />
+		<effect file="shaders/bleach.fx" />
+		<effect file="shaders/blur.fx" />
+		<effect file="shaders/blur_pattern.fx" />
+		<effect file="shaders/color_convert.fx" />
+		<effect file="shaders/edge_detect.fx" />
+		<effect file="shaders/emboss.fx" />
+		<effect file="shaders/invert_color.fx" />
+		<effect file="shaders/light_sources.fx" />
+		<effect file="shaders/magnify.fx" />
+		<effect file="shaders/merge.fx" />
+		<effect file="shaders/ono_san_zoom.fx" />
+		<effect file="shaders/test.fx" />
+		<effect file="shaders/waving.fx" />
+		<effect file="shaders/switch.fx" />
+	</effects>
+	<textures>
+		<texture file="textures/atsukan1_96x96.bmp" />
+		<texture file="textures/mr_burns2.jpg" />
+		<texture file="textures/particle.png" />
+	</textures>
+</efxprj>

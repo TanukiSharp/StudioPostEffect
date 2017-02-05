@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModelScene>
+	<Node name="Amazon">
+		<Node.Scale x="0.2" y="0.2" z="0.2" />
+		<Node.Translation x="-51" y="73" z="0" />
+		<Node.RotationY angle="180" />
+		<Model filename="Amazon\Amazon.x"/>
+	</Node>
+	<Node name="Robot">
+		<Node.Scale x="2.5" y="2.5" z="2.5" />
+		<Node.Translation x="6" y="0" z="0" />
+		<Node.RotationY angle="0" />
+		<Node.Translation x="0" y="0" z="-2" />
+		<Model filename="Robot/Robot.x"/>
+	</Node>
+</ModelScene>

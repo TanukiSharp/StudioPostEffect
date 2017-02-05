@@ -1,0 +1,292 @@
+<?xml version="1.0"?>
+<!-- syntaxdefinition for HLSL -->
+
+<SyntaxDefinition name="HLSL" extensions=".fx">
+
+	<Properties>
+		<Property name="LineComment" value="//"/>
+	</Properties>
+
+	<Digits name="Digits" bold="false" italic="false" color="Firebrick"/>
+
+	<RuleSets>
+		<RuleSet ignorecase="true">
+			<Delimiters>&amp;&lt;&gt;~!%^*()-+=|\#/{}[]:;"' ,	.?</Delimiters>
+
+			<Span name="LineComment" rule="CommentMarkerSet" bold="false" italic="false" color="Green" stopateol="true">
+				<Begin>//</Begin>
+			</Span>
+
+			<Span name="BlockComment" rule="CommentMarkerSet" bold="false" italic="false" color="Green" stopateol="false">
+				<Begin>/*</Begin>
+				<End>*/</End>
+			</Span>
+
+			<Span name="String" bold="false" italic="false" color="Gray" stopateol="true">
+				<Begin>"</Begin>
+				<End>"</End>
+			</Span>
+
+			<Span name="MultiLineString" bold = "false" italic = "false" color = "Gray" stopateol = "false" noescapesequences="true">
+				<Begin>"</Begin>
+				<End>"</End>
+			</Span>
+
+			<Span name="Char" bold="false" italic="false" color="Gray" stopateol="true">
+				<Begin>&apos;</Begin>
+				<End>&apos;</End>
+			</Span>
+
+			<KeyWords name="Punctuation" bold="false" italic="false" color="Black">
+				<Key word="?" />
+				<Key word="," />
+				<Key word="." />
+				<Key word=";" />
+				<Key word="(" />
+				<Key word=")" />
+				<Key word="[" />
+				<Key word="]" />
+				<Key word="{" />
+				<Key word="}" />
+				<Key word="+" />
+				<Key word="-" />
+				<Key word="/" />
+				<Key word="%" />
+				<Key word="*" />
+				<Key word="&lt;" />
+				<Key word="&gt;" />
+				<Key word="^" />
+				<Key word="=" />
+				<Key word="~" />
+				<Key word="!" />
+				<Key word="|" />
+				<Key word="&amp;" />
+			</KeyWords>
+
+			<KeyWords name="InternalVariables" bold="false" italic="false" color="SteelBlue"> <!--SteelBlue-->
+				<Key word="x"/>
+				<Key word="y"/>
+				<Key word="z"/>
+				<Key word="w"/>
+				<Key word="r"/>
+				<Key word="g"/>
+				<Key word="b"/>
+				<Key word="a"/>
+				<Key word="u"/>
+				<Key word="v"/>
+			</KeyWords>
+
+			<KeyWords name="Profiles" bold="false" italic="false" color="DodgerBlue">
+				<Key word="ps_1_0"/>
+				<Key word="ps_2_0"/>
+				<Key word="ps_3_0"/>
+				<Key word="vs_1_0"/>
+				<Key word="vs_2_0"/>
+				<Key word="vs_3_0"/>
+				<Key word="fx_4_0"/>
+			</KeyWords>
+
+			<KeyWords name="VariableModifiers" bold="false" italic="false" color="Blue">
+				<Key word="register"/>
+				<Key word="extern"/>
+				<Key word="nointerpolation"/>
+				<Key word="shared"/>
+				<Key word="static"/>
+				<Key word="uniform"/>
+				<Key word="volatile"/>
+				<Key word="const"/>
+				<Key word="row_major"/>
+				<Key word="column_major"/>
+			</KeyWords>
+
+			<KeyWords name="DataTypes" bold="false" italic="false" color="Blue">
+				<Key word="buffer"/>
+				<Key word="scalar"/>
+				<Key word="vector"/>
+				<Key word="matrix"/>
+				<Key word="sampler"/>
+				<Key word="shader"/>
+				<Key word="texture"/>
+				<Key word="struct"/>
+				<Key word="typedef"/>
+				<Key word="bool"/>
+				<Key word="int"/>
+				<Key word="uint"/>
+				<Key word="half"/>
+				<Key word="float"/>
+				<Key word="double"/>
+				<Key word="float1"/>
+				<Key word="float2"/>
+				<Key word="float3"/>
+				<Key word="float4"/>
+				<Key word="int1"/>
+				<Key word="int2"/>
+				<Key word="int3"/>
+				<Key word="int4"/>
+				<Key word="uint1"/>
+				<Key word="uint2"/>
+				<Key word="uint3"/>
+				<Key word="uint4"/>
+				<Key word="half1"/>
+				<Key word="half2"/>
+				<Key word="half3"/>
+				<Key word="half4"/>
+				<Key word="double1"/>
+				<Key word="double2"/>
+				<Key word="double3"/>
+				<Key word="double4"/>
+				<Key word="float1x1"/>
+				<Key word="float1x2"/>
+				<Key word="float1x3"/>
+				<Key word="float1x4"/>
+				<Key word="float2x1"/>
+				<Key word="float2x2"/>
+				<Key word="float2x3"/>
+				<Key word="float2x4"/>
+				<Key word="float3x1"/>
+				<Key word="float3x2"/>
+				<Key word="float3x3"/>
+				<Key word="float3x4"/>
+				<Key word="float4x1"/>
+				<Key word="float4x2"/>
+				<Key word="float4x3"/>
+				<Key word="float4x4"/>
+				<Key word="texture1d"/>
+				<Key word="texture1darray"/>
+				<Key word="texture2d"/>
+				<Key word="texture2darray"/>
+				<Key word="texture3d"/>
+				<Key word="texturecube"/>
+				<Key word="texturecubearray"/>
+				<Key word="texture2dms"/>
+				<Key word="texture2dmsarray"/>
+			</KeyWords>
+
+			<KeyWords name="SamplerStates" bold="true" italic="false" color="MediumSlateBlue">
+				<Key word="addressu"/>
+				<Key word="addressv"/>
+				<Key word="minfilter"/>
+				<Key word="magfilter"/>
+				<Key word="addressw"/>
+				<Key word="bordercolor"/>
+				<Key word="filter"/>
+				<Key word="maxanisotropy"/>
+				<Key word="maxlod"/>
+				<Key word="minlod"/>
+				<Key word="miplodbias"/>
+				<Key word="comparisonfunc"/>
+				<Key word="comparisonfilter"/>
+			</KeyWords>
+
+			<KeyWords name="Effect" bold="true" italic="false" color="MediumSlateBlue">
+				<Key word="technique"/>
+				<Key word="technique10"/>
+				<Key word="pass"/>
+				<Key word="vertexshader"/>
+				<Key word="pixelshader"/>
+				<Key word="compile"/>
+				<Key word="setvertexshader"/>
+				<Key word="setgeometryshader"/>
+				<Key word="setpixelshader"/>
+				<Key word="compileshader"/>
+			</KeyWords>
+
+			<KeyWords name="ValuesBlue" bold="false" italic="false" color="Blue">
+				<Key word="true"/>
+				<Key word="false"/>
+			</KeyWords>
+
+			<KeyWords name="ValuesBoldBlack" bold="true" italic="false" color="Black">
+				<Key word="null"/>
+			</KeyWords>
+
+			<KeyWords name="SemanticsVertexAndPixelShader" bold="true" italic="false" color="MediumSlateBlue">
+				<Key word="binormal"/>
+				<Key word="blendindices"/>
+				<Key word="blendweight"/>
+				<Key word="color"/>
+				<Key word="color0"/>
+				<Key word="color1"/>
+				<Key word="color2"/>
+				<Key word="color3"/>
+				<Key word="color4"/>
+				<Key word="color5"/>
+				<Key word="color6"/>
+				<Key word="color7"/>
+				<Key word="normal"/>
+				<Key word="position"/>
+				<Key word="position0"/>
+				<Key word="position1"/>
+				<Key word="position2"/>
+				<Key word="position3"/>
+				<Key word="position4"/>
+				<Key word="position5"/>
+				<Key word="position6"/>
+				<Key word="position7"/>
+				<Key word="positiont"/>
+				<Key word="psize"/>
+				<Key word="tangent"/>
+				<Key word="texcoord"/>
+				<Key word="texcoord0"/>
+				<Key word="texcoord1"/>
+				<Key word="texcoord2"/>
+				<Key word="texcoord3"/>
+				<Key word="texcoord4"/>
+				<Key word="texcoord5"/>
+				<Key word="texcoord6"/>
+				<Key word="texcoord7"/>
+				<Key word="fog"/>
+				<Key word="tessfactor"/>
+				<Key word="vface"/>
+				<Key word="vpos"/>
+			</KeyWords>
+
+			<KeyWords name="SemanticsSystemValue" bold="true" italic="false" color="MediumSlateBlue">
+				<Key word="sv_depth"/>
+				<Key word="sv_position"/>
+				<Key word="sv_target"/>
+				<Key word="depth"/>
+				<Key word="position"/>
+				<Key word="color"/>
+				<Key word="sv_clipdistance"/>
+				<Key word="sv_culldistance"/>
+				<Key word="sv_coverage"/>
+				<Key word="sv_isfrontface"/>
+				<Key word="sv_rendertargetarrayindex"/>
+				<Key word="sv_sampleindex"/>
+				<Key word="sv_viewportarrayindex"/>
+				<Key word="sv_instanceid"/>
+				<Key word="sv_primitiveid"/>
+				<Key word="sv_vertexid"/>
+			</KeyWords>
+
+			<KeyWords name="FlowControl" bold="false" italic="false" color="Blue">
+				<Key word="break"/>
+				<Key word="continue"/>
+				<Key word="discard"/>
+				<Key word="do"/>
+				<Key word="for"/>
+				<Key word="if"/>
+				<Key word="switch"/>
+				<Key word="while"/>
+				<Key word="return"/>
+			</KeyWords>
+
+			<KeyWords name="FunctionParams" bold="false" italic="false" color="MediumSlateBlue">
+				<Key word="inline"/>
+				<Key word="target"/>
+				<Key word="in"/>
+				<Key word="inout"/>
+				<Key word="out"/>
+				<Key word="uniform"/>
+			</KeyWords>
+
+		</RuleSet>
+
+		<RuleSet name="CommentMarkerSet" ignorecase="true"></RuleSet>
+
+		<RuleSet name="DocCommentSet" ignorecase="false"></RuleSet>
+
+		<RuleSet name="XmlDocSet" ignorecase="false"></RuleSet>
+	</RuleSets>
+</SyntaxDefinition>

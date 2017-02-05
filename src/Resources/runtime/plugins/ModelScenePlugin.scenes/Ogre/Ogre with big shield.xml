@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModelScene>
+	<Node name="body">
+		<Node.Translation x="0" y="18" z="0" />
+		<Node.RotationY angle="180" />
+		<Node.Scale x="0.015" y="0.015" z="0.015" />
+		<Model filename="body.x"/>
+		<Node name="armor">
+			<Node.Translation x="0" y="0" z="0" />
+			<Node.Scale x="1" y="1" z="1" />
+			<Model filename="armor.x"/>
+		</Node>
+		<Node name="shield">
+			<Node.Scale x="2" y="2" z="2" />
+			<Node.RotationY angle="-16" />
+			<Node.Translation x="393" y="-384" z="117" />
+			<Model filename="shield.x"/>
+		</Node>
+	</Node>
+</ModelScene>

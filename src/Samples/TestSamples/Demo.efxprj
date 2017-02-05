@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<efxprj version="0.1">
+	<compositions>
+		<composition name="wave">
+			<items>
+				<item id="0" pass="Yopparai.Yopparai4" x="125" y="62">
+					<param name="STRENGTH" value="32.54" min="10" max="255" />
+					<param name="FREQUENCY" value="2.04" min="0" max="255" />
+					<param name="SPEED" value="0" min="0" max="1" />
+					<param name="CURRENT_TIME" value="0" min="0" max="1" />
+				</item>
+				<item id="1" primitive="result" x="276" y="136" />
+				<item id="2" primitive="scene" x="19" y="26" />
+			</items>
+			<links>
+				<link out="2" in="0" param="0" />
+				<link out="0" in="1" />
+			</links>
+		</composition>
+		<composition name="demo">
+			<items>
+				<item id="0" primitive="result" x="304" y="120" />
+				<item id="1" primitive="scene" x="22" y="24" />
+			</items>
+			<links />
+		</composition>
+	</compositions>
+	<effects>
+		<effect file="shaders/black_white.fx" />
+		<effect file="shaders/bleach.fx" />
+		<effect file="shaders/blur.fx" />
+		<effect file="shaders/blur_pattern.fx" />
+		<effect file="shaders/color_convert.fx" />
+		<effect file="shaders/edge_detect.fx" />
+		<effect file="shaders/emboss.fx" />
+		<effect file="shaders/invert_color.fx" />
+		<effect file="shaders/light_sources.fx" />
+		<effect file="shaders/magnify.fx" />
+		<effect file="shaders/merge.fx" />
+		<effect file="shaders/switch.fx" />
+		<effect file="shaders/zoom.fx" />
+		<effect file="shaders/yopparai.fx" />
+	</effects>
+	<textures>
+		<texture file="textures/particle.png" />
+	</textures>
+</efxprj>

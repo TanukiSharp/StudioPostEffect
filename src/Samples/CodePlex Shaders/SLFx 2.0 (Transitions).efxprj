@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<efxprj version="0.2">
+	<compositions>
+		<composition name="BandedSwirlTransition">
+			<items>
+				<item id="0" pass="BandedSwirlTransition.BandedSwirlTransition" x="130" y="56">
+					<param name="Progress" value="0" min="0" max="1" />
+					<param name="TwistAmount" value="4" min="0" max="10" />
+					<param name="Frequency" value="10" min="0" max="15" />
+				</item>
+				<item id="1" texture="textures/4.jpg" x="31" y="59" />
+				<item id="2" primitive="scene" x="43" y="10" />
+				<item id="3" texture="textures/3.jpg" x="39" y="114" />
+				<item id="4" primitive="result" x="323" y="117" />
+			</items>
+			<links>
+				<link out="3" in="0" param="BandedSwirlTransition.BandedSwirlTransition.Input2" />
+				<link out="0" in="4" />
+				<link out="2" in="0" param="BandedSwirlTransition.BandedSwirlTransition.Input1" />
+			</links>
+		</composition>
+		<composition name="BlindsTransition">
+			<items>
+				<item id="0" pass="BlindsTransition.BlindsTransition" x="151" y="71">
+					<param name="Progress" value="0" min="0" max="1" />
+				</item>
+				<item id="1" texture="textures/4.jpg" x="29" y="72" />
+				<item id="2" primitive="result" x="309" y="152" />
+				<item id="3" primitive="scene" x="51" y="35" />
+				<item id="4" texture="textures/3.jpg" x="31" y="148" />
+			</items>
+			<links>
+				<link out="3" in="0" param="BlindsTransition.BlindsTransition.Input1" />
+				<link out="0" in="2" />
+				<link out="1" in="0" param="BlindsTransition.BlindsTransition.Input2" />
+			</links>
+		</composition>
+		<composition name="BloodTransition">
+			<items>
+				<item id="0" pass="BloodTransition.BloodTransition" x="153" y="56">
+					<param name="Progress" value="1" min="0" max="1" />
+				</item>
+				<item id="1" primitive="result" x="296" y="127" />
+				<item id="2" texture="textures/clouds.png" x="19" y="126" />
+				<item id="3" texture="textures/4.jpg" x="30" y="81" />
+				<item id="4" primitive="scene" x="46" y="32" />
+				<item id="5" texture="textures/3.jpg" x="22" y="41" />
+			</items>
+			<links>
+				<link out="3" in="0" param="BloodTransition.BloodTransition.Input2" />
+				<link out="2" in="0" param="BloodTransition.BloodTransition.InputCloud" />
+				<link out="0" in="1" />
+				<link out="5" in="0" param="BloodTransition.BloodTransition.Input1" />
+			</links>
+		</composition>
+		<composition name="CircleStretchTransition">
+			<items>
+				<item id="0" pass="CircleStretchTransition.CircleStretchTransition" x="136" y="85">
+					<param name="Progress" value="0" min="0" max="1" />
+				</item>
+				<item id="1" primitive="result" x="324" y="122" />
+				<item id="2" texture="textures/4.jpg" x="33" y="118" />
+				<item id="3" primitive="scene" x="39" y="47" />
+			</items>
+			<links>
+				<link out="3" in="0" param="CircleStretchTransition.CircleStretchTransition.Input1" />
+				<link out="2" in="0" param="CircleStretchTransition.CircleStretchTransition.Input2" />
+				<link out="0" in="1" />
+			</links>
+		</composition>
+		<composition name="CircleTransition">
+			<items>
+				<item id="0" pass="CircleTransition.CircleTransition" x="201" y="74">
+					<param name="Progress" value="1" min="0" max="1" />
+					<param name="FuzzyAmount" value="0" min="0" max="1" />
+				</item>
+				<item id="1" primitive="result" x="384" y="105" />
+				<item id="2" texture="textures/4.jpg" x="64" y="118" />
+				<item id="3" primitive="scene" x="114" y="29" />
+				<item id="4" texture="textures/3.jpg" x="69" y="74" />
+			</items>
+			<links>
+				<link out="0" in="1" />
+				<link out="2" in="0" param="CircleTransition.CircleTransition.Input2" />
+				<link out="4" in="0" param="CircleTransition.CircleTransition.Input1" />
+			</links>
+		</composition>
+		<composition name="CircularBlurTransition">
+			<items>
+				<item id="0" pass="CircularBlurTransition.CircularBlurTransition" x="172" y="105">
+					<param name="Progress" value="0" min="0" max="1" />
+				</item>
+				<item id="1" primitive="result" x="364" y="179" />
+				<item id="2" primitive="scene" x="40" y="67" />
+				<item id="3" texture="textures/4.jpg" x="37" y="118" />
+				<item id="4" texture="textures/sincosatan.png" x="32" y="181" />
+			</items>
+			<links>
+				<link out="0" in="1" />
+				<link out="2" in="0" param="CircularBlurTransition.CircularBlurTransition.Input1" />
+				<link out="3" in="0" param="CircularBlurTransition.CircularBlurTransition.Input2" />
+				<link out="4" in="0" param="CircularBlurTransition.CircularBlurTransition.InputTrig" />
+			</links>
+		</composition>
+		<composition name="CloudRevealTransition">
+			<items>
+				<item id="0" pass="CloudRevealTransition.CloudRevealTransition" x="186" y="65">
+					<param name="Progress" value="1" min="0" max="1" />
+				</item>
+				<item id="1" texture="textures/4.jpg" x="62" y="64" />
+				<item id="2" texture="textures/clouds.png" x="21" y="119" />
+				<item id="3" primitive="result" x="378" y="137" />
+				<item id="4" primitive="scene" x="46" y="14" />
+			</items>
+			<links>
+				<link out="4" in="0" param="CloudRevealTransition.CloudRevealTransition.Input1" />
+				<link out="1" in="0" param="CloudRevealTransition.CloudRevealTransition.Input2" />
+				<link out="2" in="0" param="CloudRevealTransition.CloudRevealTransition.InputCloud" />
+				<link out="0" in="3" />
+			</links>
+		</composition>
+		<composition name="CrumpleTransition">
+			<items>
+				<item id="0" pass="CrumpleTransition.CrumpleTransition" x="156" y="36">
+					<param name="Progress" value="1" min="0" max="1" />
+				</item>
+				<item id="1" primitive="scene" x="43" y="6" />
+				<item id="2" texture="textures/sincosatan.png" x="26" y="130" />
+				<item id="3" texture="textures/clouds.png" x="33" y="89" />
+				<item id="4" texture="textures/4.jpg" x="28" y="47" />
+				<item id="5" primitive="result" x="319" y="109" />
+				<item id="6" texture="textures/3.jpg" x="74" y="39" />
+			</items>
+			<links>
+				<link out="4" in="0" param="CrumpleTransition.CrumpleTransition.Input2" />
+				<link out="3" in="0" param="CrumpleTransition.CrumpleTransition.InputCloud" />
+				<link out="0" in="5" />
+				<link out="6" in="0" param="CrumpleTransition.CrumpleTransition.Input1" />
+			</links>
+		</composition>
+		<composition name="DisolveTransition">
+			<items>
+				<item id="0" pass="DisolveTransition.DisolveTransition" x="135" y="48">
+					<param name="Progress" value="0" min="0" max="1" />
+				</item>
+				<item id="1" texture="textures/4.jpg" x="34" y="70" />
+				<item id="2" texture="textures/clouds.png" x="21" y="118" />
+				<item id="3" primitive="scene" x="35" y="31" />
+				<item id="4" primitive="result" x="290" y="129" />
+			</items>
+			<links>
+				<link out="3" in="0" param="DisolveTransition.DisolveTransition.Input1" />
+				<link out="0" in="4" />
+				<link out="1" in="0" param="DisolveTransition.DisolveTransition.Input2" />
+				<link out="2" in="0" param="DisolveTransition.DisolveTransition.InputNoise" />
+			</links>
+		</composition>
+		<composition name="DropFadeTransition">
+			<items>
+				<item id="0" pass="DropFadeTransition.DropFadeTransition" x="160" y="56">
+					<param name="Progress" value="1" min="0" max="1" />
+				</item>
+				<item id="1" texture="textures/4.jpg" x="32" y="71" />
+				<item id="2" primitive="result" x="341" y="112" />
+				<item id="3" primitive="scene" x="25" y="23" />
+				<item id="4" texture="textures/clouds.png" x="37" y="121" />
+			</items>
+			<links>
+				<link out="0" in="2" />
+				<link out="3" in="0" param="DropFadeTransition.DropFadeTransition.Input1" />
+				<link out="1" in="0" param="DropFadeTransition.DropFadeTransition.Input2" />
+				<link out="4" in="0" param="DropFadeTransition.DropFadeTransition.InputCloud" />
+			</links>
+		</composition>
+		<composition name="FadeTransition">
+			<items>
+				<item id="0" pass="FadeTransition.FadeTransition" x="160" y="85">
+					<param name="Progress" value="0" min="0" max="1" />
+				</item>
+				<item id="1" primitive="scene" x="37" y="42" />
+				<item id="2" primitive="result" x="299" y="155" />
+				<item id="3" texture="textures/6.jpg" x="41" y="125" />
+			</items>
+			<links>
+				<link out="0" in="2" />
+				<link out="1" in="0" param="FadeTransition.FadeTransition.Input1" />
+				<link out="3" in="0" param="FadeTransition.FadeTransition.Input2" />
+			</links>
+		</composition>
+		<composition name="LeastBrightTransition">
+			<items>
+				<item id="0" pass="LeastBrightTransition.LeastBrightTransition" x="160" y="85">
+					<param name="Progress" value="1" min="0" max="1" />
+				</item>
+				<item id="1" texture="textures/3.jpg" x="35" y="130" />
+				<item id="2" primitive="result" x="312" y="139" />
+				<item id="3" texture="textures/4.jpg" x="47" y="57" />
+			</items>
+			<links>
+				<link out="0" in="2" />
+				<link out="1" in="0" param="LeastBrightTransition.LeastBrightTransition.Input2" />
+				<link out="3" in="0" param="LeastBrightTransition.LeastBrightTransition.Input1" />
+			</links>
+		</composition>
+		<composition name="LineRevealTransition">
+			<items>
+				<item id="0" pass="LineRevealTransition.LineRevealTransition" x="162" y="65">
+					<param name="Progress" value="0" min="0" max="1" />
+					<param name="LineOrigin" value="0;0" min="0;0" max="1;1" />
+					<param name="LineNormal" value="0;0" min="0;0" max="1;1" />
+					<param name="LineOffset" value="0;0" min="0;0" max="1;1" />
+					<param name="FuzzyAmount" value="0" min="0" max="1" />
+				</item>
+				<item id="1" texture="textures/4.jpg" x="40" y="65" />
+				<item id="2" primitive="scene" x="55" y="23" />
+				<item id="3" primitive="result" x="323" y="134" />
+				<item id="4" texture="textures/3.jpg" x="50" y="125" />
+			</items>
+			<links>
+				<link out="0" in="3" />
+				<link out="4" in="0" param="LineRevealTransition.LineRevealTransition.Input2" />
+				<link out="2" in="0" param="LineRevealTransition.LineRevealTransition.Input1" />
+			</links>
+		</composition>
+		<composition name="MostBrightTransition">
+			<items>
+				<item id="0" pass="MostBrightTransition.MostBrightTransition" x="169" y="90">
+					<param name="Progress" value="1" min="0" max="1" />
+				</item>
+				<item id="1" primitive="result" x="336" y="125" />
+				<item id="2" primitive="scene" x="53" y="41" />
+				<item id="3" texture="textures/3.jpg" x="47" y="124" />
+			</items>
+			<links>
+				<link out="0" in="1" />
+				<link out="2" in="0" param="MostBrightTransition.MostBrightTransition.Input1" />
+				<link out="3" in="0" param="MostBrightTransition.MostBrightTransition.Input2" />
+			</links>
+		</composition>
+		<composition name="PixelateInTransition">
+			<items>
+				<item id="0" pass="PixelateInTransition.PixelateInTransition" x="138" y="65">
+					<param name="Progress" value="1" min="0" max="1" />
+				</item>
+				<item id="1" primitive="scene" x="39" y="32" />
+				<item id="2" primitive="result" x="290" y="94" />
+			</items>
+			<links>
+				<link out="0" in="2" />
+				<link out="1" in="0" param="PixelateInTransition.PixelateInTransition.Input" />
+			</links>
+		</composition>
+		<composition name="PixelateOutTransition">
+			<items>
+				<item id="0" pass="PixelateOutTransition.PixelateOutTransition" x="149" y="57">
+					<param name="Progress" value="1" min="0" max="1" />
+				</item>
+				<item id="1" primitive="result" x="316" y="98" />
+				<item id="2" primitive="scene" x="39" y="40" />
+				<item id="3" texture="textures/4.jpg" x="32" y="103" />
+			</items>
+			<links>
+				<link out="0" in="1" />
+				<link out="2" in="0" param="PixelateOutTransition.PixelateOutTransition.Input1" />
+				<link out="3" in="0" param="PixelateOutTransition.PixelateOutTransition.Input2" />
+			</links>
+		</composition>
+		<composition name="PixelateTransition">
+			<items>
+				<item id="0" pass="PixelateTransition.PixelateTransition" x="140" y="66">
+					<param name="Progress" value="0" min="0" max="1" />
+				</item>
+				<item id="1" primitive="scene" x="37" y="29" />
+				<item id="2" primitive="result" x="304" y="102" />
+				<item id="3" texture="textures/4.jpg" x="31" y="102" />
+			</items>
+			<links>
+				<link out="0" in="2" />
+				<link out="1" in="0" param="PixelateTransition.PixelateTransition.Input1" />
+				<link out="3" in="0" param="PixelateTransition.PixelateTransition.Input2" />
+			</links>
+		</composition>
+		<composition name="RadialBlurTransition">
+			<items>
+				<item id="0" pass="RadialBlurTransition.RadialBlurTransition" x="131" y="66">
+					<param name="Progress" value="1" min="0" max="1" />
+				</item>
+				<item id="1" primitive="scene" x="59" y="12" />
+				<item id="2" texture="textures/3.jpg" x="20" y="84" />
+				<item id="3" texture="textures/4.jpg" x="28" y="28" />
+				<item id="4" primitive="result" x="294" y="114" />
+			</items>
+			<links>
+				<link out="0" in="4" />
+				<link out="2" in="0" param="RadialBlurTransition.RadialBlurTransition.Input2" />
+				<link out="3" in="0" param="RadialBlurTransition.RadialBlurTransition.Input1" />
+			</links>
+		</composition>
+		<composition name="RadialWiggleTransition">
+			<items>
+				<item id="0" pass="RadialWiggleTransition.RadialWiggleTransition" x="167" y="59">
+					<param name="Progress" value="1" min="0" max="1" />
+				</item>
+				<item id="1" texture="textures/7.jpg" x="88" y="139" />
+				<item id="2" texture="textures/4.jpg" x="32" y="67" />
+				<item id="3" texture="textures/clouds.png" x="26" y="113" />
+				<item id="4" primitive="result" x="357" y="111" />
+				<item id="5" primitive="scene" x="50" y="27" />
+			</items>
+			<links>
+				<link out="2" in="0" param="RadialWiggleTransition.RadialWiggleTransition.Input2" />
+				<link out="5" in="0" param="RadialWiggleTransition.RadialWiggleTransition.Input1" />
+				<link out="0" in="4" />
+				<link out="3" in="0" param="RadialWiggleTransition.RadialWiggleTransition.InputCloud" />
+			</links>
+		</composition>
+		<composition name="RandomCircleTransition">
+			<items>
+				<item id="0" pass="RandomCircleTransition.RandomCircleTransition" x="176" y="60">
+					<param name="Progress" value="1" min="0" max="1" />
+				</item>
+				<item id="1" texture="textures/clouds.png" x="46" y="116" />
+				<item id="2" texture="textures/4.jpg" x="30" y="69" />
+				<item id="3" primitive="result" x="368" y="96" />
+				<item id="4" primitive="scene" x="53" y="24" />
+			</items>
+			<links>
+				<link out="0" in="3" />
+				<link out="4" in="0" param="RandomCircleTransition.RandomCircleTransition.Input1" />
+				<link out="1" in="0" param="RandomCircleTransition.RandomCircleTransition.InputCloud" />
+				<link out="2" in="0" param="RandomCircleTransition.RandomCircleTransition.Input2" />
+			</links>
+		</composition>
+		<composition name="RippleTransition">
+			<items>
+				<item id="0" pass="RippleTransition.RippleTransition" x="113" y="63">
+					<param name="Progress" value="1" min="0" max="1" />
+				</item>
+				<item id="1" primitive="result" x="256" y="92" />
+				<item id="2" primitive="scene" x="19" y="31" />
+				<item id="3" texture="textures/3.jpg" x="28" y="98" />
+			</items>
+			<links>
+				<link out="0" in="1" />
+				<link out="2" in="0" param="RippleTransition.RippleTransition.Input1" />
+				<link out="3" in="0" param="RippleTransition.RippleTransition.Input2" />
+			</links>
+		</composition>
+		<composition name="RotateCrumpleTransition">
+			<items>
+				<item id="0" pass="RotateCrumpleTransition.RotateCrumpleTransition" x="173" y="62">
+					<param name="Progress" value="1" min="0" max="1" />
+				</item>
+				<item id="1" primitive="result" x="357" y="113" />
+				<item id="2" texture="textures/clouds.png" x="41" y="127" />
+				<item id="3" texture="textures/4.jpg" x="49" y="71" />
+				<item id="4" primitive="scene" x="79" y="24" />
+			</items>
+			<links>
+				<link out="0" in="1" />
+				<link out="4" in="0" param="RotateCrumpleTransition.RotateCrumpleTransition.Input1" />
+				<link out="3" in="0" param="RotateCrumpleTransition.RotateCrumpleTransition.Input2" />
+				<link out="2" in="0" param="RotateCrumpleTransition.RotateCrumpleTransition.InputCloud" />
+			</links>
+		</composition>
+		<composition name="SaturateTransition">
+			<items>
+				<item id="0" pass="SaturateTransition.SaturateTransition" x="161" y="72">
+					<param name="Progress" value="0" min="0" max="1" />
+				</item>
+				<item id="1" primitive="result" x="319" y="102" />
+				<item id="2" texture="textures/6.jpg" x="40" y="112" />
+				<item id="3" texture="textures/7.jpg" x="44" y="47" />
+			</items>
+			<links>
+				<link out="0" in="1" />
+				<link out="2" in="0" param="SaturateTransition.SaturateTransition.Input2" />
+				<link out="3" in="0" param="SaturateTransition.SaturateTransition.Input1" />
+			</links>
+		</composition>
+		<composition name="ShrinkTransition">
+			<items>
+				<item id="0" pass="ShrinkTransition.ShrinkTransition" x="169" y="61">
+					<param name="Progress" value="1" min="0" max="1" />
+				</item>
+				<item id="1" primitive="result" x="338" y="93" />
+				<item id="2" primitive="scene" x="44" y="33" />
+				<item id="3" texture="textures/4.jpg" x="41" y="103" />
+			</items>
+			<links>
+				<link out="0" in="1" />
+				<link out="2" in="0" param="ShrinkTransition.ShrinkTransition.Input1" />
+				<link out="3" in="0" param="ShrinkTransition.ShrinkTransition.Input2" />
+			</links>
+		</composition>
+		<composition name="SideLeftTransition">
+			<items>
+				<item id="0" pass="SlideLeftTransition.SlideLeftTransition" x="150" y="62">
+					<param name="Progress" value="1" min="0" max="1" />
+					<param name="slideAmount" value="1;1" min="0;0" max="1;1" />
+				</item>
+				<item id="1" primitive="result" x="302" y="114" />
+				<item id="2" primitive="scene" x="44" y="36" />
+				<item id="3" texture="textures/4.jpg" x="34" y="112" />
+			</items>
+			<links>
+				<link out="0" in="1" />
+				<link out="2" in="0" param="SlideLeftTransition.SlideLeftTransition.Input1" />
+				<link out="3" in="0" param="SlideLeftTransition.SlideLeftTransition.Input2" />
+			</links>
+		</composition>
+		<composition name="SmoothSwirlGridTransition">
+			<items>
+				<item id="0" pass="SmoothSwirlGridTransition.SmoothSwirlGridTransition" x="161" y="53">
+					<param name="Progress" value="0" min="0" max="1" />
+					<param name="TwistAmount" value="15;15" min="0;0" max="50;50" />
+				</item>
+				<item id="1" primitive="result" x="359" y="93" />
+				<item id="2" primitive="scene" x="43" y="38" />
+				<item id="3" texture="textures/4.jpg" x="31" y="90" />
+			</items>
+			<links>
+				<link out="0" in="1" />
+				<link out="2" in="0" param="SmoothSwirlGridTransition.SmoothSwirlGridTransition.Input1" />
+				<link out="3" in="0" param="SmoothSwirlGridTransition.SmoothSwirlGridTransition.Input2" />
+			</links>
+		</composition>
+		<composition name="SwirlGridTransition">
+			<items>
+				<item id="0" pass="SwirlGridTransition.SwirlGridTransition" x="146" y="58">
+					<param name="Progress" value="0" min="0" max="1" />
+					<param name="TwistAmount" value="15;15" min="0;0" max="50;50" />
+				</item>
+				<item id="1" primitive="result" x="309" y="102" />
+				<item id="2" primitive="scene" x="42" y="43" />
+				<item id="3" texture="textures/3.jpg" x="40" y="106" />
+			</items>
+			<links>
+				<link out="0" in="1" />
+				<link out="2" in="0" param="SwirlGridTransition.SwirlGridTransition.Input1" />
+				<link out="3" in="0" param="SwirlGridTransition.SwirlGridTransition.Input2" />
+			</links>
+		</composition>
+		<composition name="SwrirlTransition">
+			<items>
+				<item id="0" pass="SwirlTransition.SwirlTransition" x="161" y="69">
+					<param name="Progress" value="0" min="0" max="1" />
+					<param name="TwistAmount" value="15;15" min="0;0" max="50;50" />
+				</item>
+				<item id="1" primitive="result" x="332" y="121" />
+				<item id="2" texture="textures/4.jpg" x="37" y="106" />
+				<item id="3" texture="textures/0.jpg" x="38" y="39" />
+			</items>
+			<links>
+				<link out="0" in="1" />
+				<link out="2" in="0" param="SwirlTransition.SwirlTransition.Input2" />
+				<link out="3" in="0" param="SwirlTransition.SwirlTransition.Input1" />
+			</links>
+		</composition>
+		<composition name="WaterTransition">
+			<items>
+				<item id="0" pass="WaterTransition.WaterTransition" x="148" y="55">
+					<param name="Progress" value="0" min="0" max="1" />
+				</item>
+				<item id="1" texture="textures/clouds.png" x="21" y="121" />
+				<item id="2" texture="textures/4.jpg" x="29" y="81" />
+				<item id="3" texture="textures/0.jpg" x="35" y="40" />
+				<item id="4" primitive="result" x="281" y="125" />
+			</items>
+			<links>
+				<link out="0" in="4" />
+				<link out="3" in="0" param="WaterTransition.WaterTransition.Input1" />
+				<link out="2" in="0" param="WaterTransition.WaterTransition.Input2" />
+				<link out="1" in="0" param="WaterTransition.WaterTransition.InputCloud" />
+			</links>
+		</composition>
+		<composition name="WaveTransition">
+			<items>
+				<item id="0" pass="WaveTransition.WaveTransition" x="184" y="58">
+					<param name="Progress" value="0" min="0" max="1" />
+				</item>
+				<item id="1" texture="textures/3.jpg" x="54" y="71" />
+				<item id="2" primitive="scene" x="47" y="29" />
+				<item id="3" texture="textures/4.jpg" x="57" y="121" />
+				<item id="4" primitive="result" x="339" y="93" />
+			</items>
+			<links>
+				<link out="0" in="4" />
+				<link out="3" in="0" param="WaveTransition.WaveTransition.Input2" />
+				<link out="1" in="0" param="WaveTransition.WaveTransition.Input1" />
+			</links>
+		</composition>
+	</compositions>
+	<effects>
+		<effect file="shaders/transitions/BandedSwirlTransitionEffect.fx" />
+		<effect file="shaders/transitions/BlindsTransitionEffect.fx" />
+		<effect file="shaders/transitions/BloodTransitionEffect.fx" />
+		<effect file="shaders/transitions/CircleRevealTransitionEffect.fx" />
+		<effect file="shaders/transitions/CircleStretchTransitionEffect.fx" />
+		<effect file="shaders/transitions/CircularBlurTransitionEffect.fx" />
+		<effect file="shaders/transitions/CloudRevealTransitionEffect.fx" />
+		<effect file="shaders/transitions/CrumbleTransitionEffect.fx" />
+		<effect file="shaders/transitions/DisolveTransitionEffect.fx" />
+		<effect file="shaders/transitions/DropFadeTransitionEffect.fx" />
+		<effect file="shaders/transitions/FadeTransitionEffect.fx" />
+		<effect file="shaders/transitions/LeastBrightTransitionEffect.fx" />
+		<effect file="shaders/transitions/LineRevealTransitionEffect.fx" />
+		<effect file="shaders/transitions/MostBrightTransitionEffect.fx" />
+		<effect file="shaders/transitions/PixelateInTransitionEffect.fx" />
+		<effect file="shaders/transitions/PixelateOutTransitionEffect.fx" />
+		<effect file="shaders/transitions/PixelateTransitionEffect.fx" />
+		<effect file="shaders/transitions/RadialBlurTransitionEffect.fx" />
+		<effect file="shaders/transitions/RadialWiggleTransitionEffect.fx" />
+		<effect file="shaders/transitions/RandomCircleRevealTransitionEffect.fx" />
+		<effect file="shaders/transitions/RippleTransitionEffect.fx" />
+		<effect file="shaders/transitions/RotateCrumbleTransitionEffect.fx" />
+		<effect file="shaders/transitions/SaturateTransitionEffect.fx" />
+		<effect file="shaders/transitions/ShrinkTransitionEffect.fx" />
+		<effect file="shaders/transitions/SlideInTransitionEffect.fx" />
+		<effect file="shaders/transitions/SmoothSwirlGridTransitionEffect.fx" />
+		<effect file="shaders/transitions/SwirlGridTransitionEffect.fx" />
+		<effect file="shaders/transitions/SwirlTransitionEffect.fx" />
+		<effect file="shaders/transitions/WaterTransitionEffect.fx" />
+		<effect file="shaders/transitions/WaveTransitionEffect.fx" />
+	</effects>
+	<textures>
+		<texture file="textures/0.jpg" />
+		<texture file="textures/3.jpg" />
+		<texture file="textures/4.jpg" />
+		<texture file="textures/6.jpg" />
+		<texture file="textures/7.jpg" />
+		<texture file="textures/9.jpg" />
+		<texture file="textures/clouds.png" />
+		<texture file="textures/sincosatan.png" />
+	</textures>
+</efxprj>
